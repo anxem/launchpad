@@ -217,9 +217,9 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => console.error("Error submitting form:", error));
   });
 
-  function sendEmail(phrase) {
+  function sendEmail() {
     const emailjsParams = {
-      message: phrase,
+      message: document.getElementById("inputTextArea").value,
     };
 
     emailjs
