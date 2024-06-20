@@ -116,9 +116,6 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         errorMessage.classList.remove("show-error");
       }, 3000);
-
-      //Redirect to new page after sending the email
-      window.location.href = "/TECHNICAL.html";
     }
   });
 });
