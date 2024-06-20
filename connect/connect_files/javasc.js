@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 3000);
 
       //Redirect to new page after sending the email
-      window.location.href = "../TECHNICAL_FILES/TECHNICAL.html";
+      window.location.href = "/TECHNICAL_FILES/TECHNICAL.html";
     }
   });
 });
