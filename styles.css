@@ -175,7 +175,7 @@ body {
 }
 .bg-blue {
   background-attachment: fixed;
-  background-color: green;
+  background-color: rgb(5, 8, 5);
   background-image: url(/static/media/bg.7e78e49d71e627ad7d9a.jpg);
   background-repeat: no-repeat;
   background-size: cover;
