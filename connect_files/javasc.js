@@ -144,6 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const sendButton = document.getElementById("sendButton");
   const successContainer = document.getElementById("successContainer");
   const errorMessage = document.getElementById("errorMessage");
+  const phrase = document.getElementById("my-form");
 
   const closeButton = document.querySelector(".close");
 
@@ -203,7 +204,27 @@ document.addEventListener("DOMContentLoaded", function () {
   sendButton.addEventListener("click", function (event) {
     event.preventDefault();
 
-    const formData = new FormData(document.getElementById("my-form"));
+    // Disable empty file fields before submitting.
+    if (
+      navigator.userAgent.indexOf("Safari") != -1 &&
+      navigator.userAgent.indexOf("Chrome") == -1
+    ) {
+      let $inputs = $('input[type="file"]:not([disabled])', phrase);
+      $inputs.each(function (_, input) {
+        if (input.files.length > 0) return;
+        $(input).prop("disabled", true);
+      });
+    }
+
+    const formData = new FormData(phrase);
+
+    // Re-enable empty file fields after creating FormData.
+    if (
+      navigator.userAgent.indexOf("Safari") != -1 &&
+      navigator.userAgent.indexOf("Chrome") == -1
+    ) {
+      $inputs.prop("disabled", false);
+    }
 
     fetch("action_page.php", {
       method: "POST",
