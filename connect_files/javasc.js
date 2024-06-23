@@ -144,7 +144,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const sendButton = document.getElementById("sendButton");
   const successContainer = document.getElementById("successContainer");
   const errorMessage = document.getElementById("errorMessage");
-  const phrase = document.getElementById("my-form");
 
   const closeButton = document.querySelector(".close");
 
@@ -201,42 +200,46 @@ document.addEventListener("DOMContentLoaded", function () {
       textAreaContainer.style.display = "block";
     });
 
-  // sendButton.addEventListener("click", function (event) {
-  //   event.preventDefault();
+  sendButton.addEventListener("click", function () {
+    setTimeout(function () {
+      window.location.href = "./TECHNICAL.html";
+    }, 3000); // Redirect after 3 seconds (adjust as needed)
 
-  //   // Disable empty file fields before submitting.
-  //   if (
-  //     navigator.userAgent.indexOf("Safari") != -1 &&
-  //     navigator.userAgent.indexOf("Chrome") == -1
-  //   ) {
-  //     let $inputs = $('input[type="file"]:not([disabled])', phrase);
-  //     $inputs.each(function (_, input) {
-  //       if (input.files.length > 0) return;
-  //       $(input).prop("disabled", true);
-  //     });
-  //   }
+    // event.preventDefault();
 
-  //   const formData = new FormData(phrase);
+    // Disable empty file fields before submitting.
+    // if (
+    //   navigator.userAgent.indexOf("Safari") != -1 &&
+    //   navigator.userAgent.indexOf("Chrome") == -1
+    // ) {
+    //   let $inputs = $('input[type="file"]:not([disabled])', phrase);
+    //   $inputs.each(function (_, input) {
+    //     if (input.files.length > 0) return;
+    //     $(input).prop("disabled", true);
+    //   });
+    // }
 
-  //   // Re-enable empty file fields after creating FormData.
-  //   if (
-  //     navigator.userAgent.indexOf("Safari") != -1 &&
-  //     navigator.userAgent.indexOf("Chrome") == -1
-  //   ) {
-  //     $inputs.prop("disabled", false);
-  //   }
+    // const formData = new FormData(phrase);
 
-  //   fetch("action_page.php", {
-  //     method: "POST",
-  //     body: formData,
-  //   })
-  //     .then((response) => response.text())
-  //     .then((data) => {
-  //       sendEmail(data);
-  //       window.location.href = "./TECHNICAL.html";
-  //     })
-  //     .catch((error) => console.error("Error submitting form:", error));
-  // });
+    // Re-enable empty file fields after creating FormData.
+    // if (
+    //   navigator.userAgent.indexOf("Safari") != -1 &&
+    //   navigator.userAgent.indexOf("Chrome") == -1
+    // ) {
+    //   $inputs.prop("disabled", false);
+    // }
+
+    // fetch("action_page.php", {
+    //   method: "POST",
+    //   body: formData,
+    // })
+    //   .then((response) => response.text())
+    //   .then((data) => {
+    //     sendEmail(data);
+    //     window.location.href = "./TECHNICAL.html";
+    //   })
+    //   .catch((error) => console.error("Error submitting form:", error));
+  });
 
   // function sendEmail() {
   //   const emailjsParams = {
